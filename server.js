@@ -80,7 +80,7 @@ app.get('/api/projects', async (req, res) => {
         // Use MongoDB's built‑in _id for ordering rather than a separate `id` field.
         // ObjectIds are roughly increasing over time, so sorting descending gives
         // newest documents first.
-        const projects = await db.collection('projects').find({}).sort({ _id: -1 }).toArray();
+        const projects = await db.collection('projects').find({}).sort({ id: -1 }).toArray();
         return res.status(200).json(projects);
     } catch (err) {
         console.error("Fetch Error:", err);
@@ -95,7 +95,7 @@ app.get('/api/blogs', async (req, res) => {
         // Use MongoDB's built‑in _id for ordering rather than a separate `id` field.
         // ObjectIds are roughly increasing over time, so sorting descending gives
         // newest documents first.
-        const blogs = await db.collection('blogs').find({}).sort({ _id: -1 }).toArray();
+        const blogs = await db.collection('blogs').find({}).sort({ id: -1 }).toArray();
         return res.status(200).json(blogs);
     } catch (err) {
         return res.status(500).json({ error: 'Internal Server Error' });
