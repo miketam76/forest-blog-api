@@ -62,7 +62,7 @@ async function connectDB() {
         console.log(`🌲 Connected to database ${db.databaseName}`);
         
         // Start the server only after the DB is connected
-        app.listen(port, () => {  
+        app.listen(port, '0.0.0.0', () => {  
             console.log(`🚀 API is running on ${getHostIP()}:${port}`);
         });
     } catch (err) {
