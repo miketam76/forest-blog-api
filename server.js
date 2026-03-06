@@ -63,7 +63,7 @@ async function connectDB() {
         
         // Start the server only after the DB is connected
         app.listen(port, '0.0.0.0', () => {  
-            console.log(`🚀 API is running on ${getHostIP()}:${port}`);
+            console.log(`🚀 API is running!`);
         });
     } catch (err) {
         console.error('❌ MongoDB Connection Error:', err);
